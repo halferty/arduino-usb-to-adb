@@ -173,23 +173,6 @@ void adbStateChanged() {
   } else if (state == READING_COMMAND_ARGS) {
     diffs[count] = diff;
     if (count > 38 || diff > 75) {
-      args = (
-        ((diffs[ 3] < 40) << 15) |
-        ((diffs[ 5] < 40) << 14) |
-        ((diffs[ 7] < 40) << 13) |
-        ((diffs[ 9] < 40) << 12) |
-        ((diffs[11] < 40) << 11) |
-        ((diffs[13] < 40) << 10) |
-        ((diffs[15] < 40) <<  9) |
-        ((diffs[17] < 40) <<  8) |
-        ((diffs[19] < 40) <<  7) |
-        ((diffs[21] < 40) <<  6) |
-        ((diffs[23] < 40) <<  5) |
-        ((diffs[25] < 40) <<  4) |
-        ((diffs[27] < 40) <<  3) |
-        ((diffs[29] < 40) <<  2) |
-        ((diffs[31] < 40) <<  1) |
-        ((diffs[33] < 40)));
       // TODO: Handle LISTEN commands here.
       state = WAITING_FOR_ATTENTION;
     }
